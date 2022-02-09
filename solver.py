@@ -1,12 +1,11 @@
 # solver.py
 
 def solve(bo):
-    find = find_empty(bo)
-    if not find:
-        return True
-    else:
+    if find := find_empty(bo):
         row, col = find
 
+    else:
+        return True
     for i in range(1,10):
         if valid(bo, i, (row, col)):
             bo[row][col] = i
